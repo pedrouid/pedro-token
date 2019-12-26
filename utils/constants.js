@@ -1,0 +1,3 @@
+const INFURA_PROJECT_ID = `e6e5816422864621b96685a7beb721b9`;
+
+module.exports = { INFURA_PROJECT_ID };

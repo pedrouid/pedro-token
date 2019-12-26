@@ -1,5 +1,4 @@
-const fs = require("fs");
-const HDWalletProvider = require("truffle-hdwallet-provider");
+const { INFURA_PROJECT_ID } = require("./constants");
 
 function getNetwork(chainId) {
   switch (chainId) {
@@ -20,26 +19,12 @@ function getNetwork(chainId) {
 
 function getRpcUrl(chainId) {
   const network = getNetwork(chainId);
-  const INFURA_PROJECT_ID = `e6e5816422864621b96685a7beb721b9`;
+
   const rpcUrl = `https://${network}.infura.io/v3/${INFURA_PROJECT_ID}`;
   return rpcUrl;
 }
 
-function getMnemonic() {
-  const mnemonic = fs
-    .readFileSync(".secret")
-    .toString()
-    .trim();
-  return mnemonic;
-}
-
-function getProvider(chainId) {
-  const rpcUrl = getRpcUrl(chainId);
-  const mnemonic = getMnemonic();
-  const provider = new HDWalletProvider(mnemonic, rpcUrl);
-  return provider;
-}
-
 module.exports = {
-  getProvider
+  getNetwork,
+  getRpcUrl
 };

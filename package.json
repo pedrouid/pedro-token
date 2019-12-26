@@ -1,0 +1,21 @@
+{
+  "name": "pedro-token",
+  "description": "ERC20 token test for testing truffle deployment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile": "truffle compile",
+    "deploy:dev": "truffle deploy",
+    "deploy:rinkeby": "truffle deploy --network=rinkeby",
+    "test": "truffle test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.4.0",
+    "bignumber.js": "^9.0.0",
+    "truffle": "^5.1.5",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}
